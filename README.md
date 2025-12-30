@@ -71,7 +71,7 @@ em:
 ## ▶️ Como Executar o Projeto
 
 1.  Clonar o repositório git clone
-    https://github.com/seu-usuario/nome-do-repositorio.git
+    https://github.com/lucas-valmeida/api-cadastro-python.git
 
 2.  Criar ambiente virtual python -m venv venv
 
