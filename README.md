@@ -1,11 +1,11 @@
 # 📌 API de Cadastro de Usuários --- FastAPI
 
-API REST simples desenvolvida em **Python com FastAPI**, com foco em
-boas práticas de backend, organização de código e validação de dados.
+API REST desenvolvida em **Python com FastAPI**, utilizando **SQLite e 
+SQLAlchemy** para persistência de dados, com CRUD completo de usuários.
 
-Projeto criado como parte do meu **portfólio de desenvolvedor**, com o
-objetivo de demonstrar lógica de programação, estruturação de APIs e
-entendimento do fluxo backend.
+Projeto criado como parte do meu **portfólio de desenvolvedor**, 
+com foco em boas práticas de backend, organização de código e regras 
+de negócio.
 
 ------------------------------------------------------------------------
 
@@ -16,6 +16,8 @@ entendimento do fluxo backend.
 -   Uvicorn
 -   Pydantic
 -   Swagger (OpenAPI)
+-   SQLAlchemy
+-   SQLite
 
 ------------------------------------------------------------------------
 
@@ -39,33 +41,12 @@ usuario.py requirements.txt README.md
 
 ## 🔗 Endpoints Disponíveis
 
-### 🔹 GET `/`
-
-Endpoint de teste para verificar se a API está funcionando.
-
-Resposta: { "message": "API funcionando via Codespaces" }
-
-------------------------------------------------------------------------
-
-### 🔹 POST `/usuarios`
-
-Cria um novo usuário com validação de dados.
-
-Body (JSON): { "nome": "Lucas", "email": "lucas@email.com", "idade": 25
-}
-
-Resposta: { "mensagem": "Usuário criado com sucesso", "usuario": {
-"nome": "Lucas", "email": "lucas@email.com", "idade": 25 } }
-
-------------------------------------------------------------------------
-
-## 📄 Documentação (Swagger)
-
-Após iniciar a aplicação, a documentação interativa pode ser acessada
-em:
-
-/docs
-
+- GET `/` → Verificação da API
+- POST `/usuarios` → Criar usuário
+- GET `/usuarios` → Listar usuários
+- GET `/usuarios/{id}` → Buscar usuário por ID
+- PUT `/usuarios/{id}` → Atualizar usuário
+- DELETE `/usuarios/{id}` → Deletar usuário
 ------------------------------------------------------------------------
 
 ## ▶️ Como Executar o Projeto
@@ -90,11 +71,11 @@ Linux / macOS: source venv/bin/activate
 
 ## 🎯 Próximas Melhorias Planejadas
 
--   Persistência de dados (SQLite ou PostgreSQL)
--   CRUD completo de usuários
--   Validações de negócio
--   Autenticação
--   Testes automatizados
+- Validação de email único
+- Paginação de resultados
+- Autenticação (JWT)
+- Testes automatizados
+- Dockerização da aplicação
 
 ------------------------------------------------------------------------
 
