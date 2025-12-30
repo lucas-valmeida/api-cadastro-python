@@ -8,7 +8,7 @@ from app.database import SessionLocal
 router = APIRouter(prefix="/usuarios", tags=["Usuários"])
 
 
-# 🔹 Dependência do banco
+# Dependência do banco
 def get_db():
     db = SessionLocal()
     try:
@@ -17,7 +17,7 @@ def get_db():
         db.close()
 
 
-# 🔹 Função auxiliar: buscar usuário por e-mail
+# Função auxiliar: buscar usuário por e-mail
 def get_usuario_por_email(db: Session, email: str):
     return (
         db.query(UsuarioModel)
@@ -32,7 +32,7 @@ def get_usuario_por_email(db: Session, email: str):
 @router.post("/")
 def criar_usuario(usuario: UsuarioCreate, db: Session = Depends(get_db)):
 
-    # 🔎 Validação de e-mail único
+    # Validação de e-mail único
     usuario_existente = get_usuario_por_email(db, usuario.email)
 
     if usuario_existente:
@@ -132,7 +132,7 @@ def atualizar_usuario(
             detail="Usuário não encontrado"
         )
 
-    # 🔎 Validação de e-mail único (exceto ele mesmo)
+    # Validação de e-mail único (exceto ele mesmo)
     if usuario.email:
         usuario_existente = get_usuario_por_email(db, usuario.email)
 
@@ -142,7 +142,7 @@ def atualizar_usuario(
                 detail="E-mail já cadastrado"
             )
 
-    # 🔄 Atualização dos campos
+    # Atualização dos campos
     usuario_db.nome = usuario.nome
     usuario_db.email = usuario.email
     usuario_db.idade = usuario.idade
