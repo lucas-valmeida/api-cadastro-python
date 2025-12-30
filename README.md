@@ -9,9 +9,20 @@ de negócio.
 
 ------------------------------------------------------------------------
 
+## 📌 Funcionalidades
+
+- ✅ Criar usuário
+- 📄 Listar usuários
+- 🔍 Buscar usuário por ID
+- ✏️ Atualizar usuário
+- ❌ Deletar usuário
+- 🔒 Validação de e-mail único (regra de negócio)
+
+------------------------------------------------------------------------
+
 ## 🚀 Tecnologias Utilizadas
 
--   Python 3
+-   Python 3.12
 -   FastAPI
 -   Uvicorn
 -   Pydantic
@@ -34,8 +45,15 @@ de negócio.
 
 ## 📁 Estrutura do Projeto
 
-app/ ├── main.py ├── routes/ │ └── usuarios.py ├── schemas/ │ └──
-usuario.py requirements.txt README.md
+app/
+├── main.py
+├── database.py
+├── models/
+│ └── usuario.py
+├── schemas/
+│ └── usuario.py
+└── routes/
+└── usuarios.py
 
 ------------------------------------------------------------------------
 
@@ -71,7 +89,6 @@ Linux / macOS: source venv/bin/activate
 
 ## 🎯 Próximas Melhorias Planejadas
 
-- Validação de email único
 - Paginação de resultados
 - Autenticação (JWT)
 - Testes automatizados
